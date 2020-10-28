@@ -89,8 +89,19 @@ public class AddressBook
 		String city = sc.nextLine();
 		for (Person list : l)
 		{
-			if (((Person) l).getCity().equals(city))
-				System.out.println(l);
+			if ( list.getCity().equals(city))
+				System.out.println(list);
+		}
+	}
+	
+	public void viewByCity()
+	{
+		System.out.println("Enter city name");
+		String city = sc.nextLine();
+		for (Person list : l)
+		{
+			if (list.getCity().equals(city))
+				System.out.println(list);
 		}
 	}
 
@@ -99,7 +110,7 @@ public class AddressBook
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program");
 		addPerson();
-		System.out.println(l);
+		a.viewByCity();
 	}
 
 }
