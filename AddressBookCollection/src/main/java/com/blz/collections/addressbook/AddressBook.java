@@ -31,10 +31,10 @@ public class AddressBook
 	
 	public static void editContact()
 	{
-		//Scanner sc = new Scanner(System.in);
 		System.out.println("Enter first name: ");
 		String firstName = sc.nextLine();
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.size(); i++)
+		{
 			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
 			{
 				list.remove(i);
@@ -42,6 +42,22 @@ public class AddressBook
 			} 
 			else {
 				System.out.println("No data found in Address Book");
+			}
+		}
+	}
+	
+	public static void deleteContact()
+	{
+		System.out.println("Enter first name : ");
+		String firstName = sc.nextLine();
+		for (int i = 0; i < list.size(); i++)
+		{
+			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			{
+				list.remove(i);
+			}
+			else {
+				System.out.println("No data found");
 			}
 		}
 	}
