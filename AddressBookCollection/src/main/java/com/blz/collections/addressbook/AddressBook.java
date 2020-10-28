@@ -25,7 +25,7 @@ public class AddressBook
 			String phoneNo = sc.nextLine();
 		System.out.println("Enter your emailId : ");
 			String email = sc.nextLine();
-			Person obj = new Person(firstName, lastName, address, city, state, zip, phoneNo, email);
+		Person obj = new Person(firstName, lastName, address, city, state, zip, phoneNo, email);
 		list.add(obj);
 	}
 	
@@ -61,13 +61,24 @@ public class AddressBook
 			}
 		}
 	}
+	
+	public static void addPerson()
+	{
+		System.out.println("Enter number of persons to add to Address Book: ");
+		int noOfPersons = sc.nextInt();
+		int count = 1;
+		while(count <= noOfPersons)
+		{
+			addContact();
+			count++;
+		}
+	}
 
 	public static void main(String[] args)
 	{
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program");
-		addContact();
-		deleteContact();
+		addPerson();
 		System.out.println(list);
 	}
 
