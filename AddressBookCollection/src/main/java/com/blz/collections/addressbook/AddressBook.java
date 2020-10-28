@@ -99,7 +99,7 @@ public class AddressBook
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program");
 		addPerson();
-		System.out.println(l);
+		a.searchByCity();
 	}
 
 }
