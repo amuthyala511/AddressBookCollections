@@ -104,13 +104,31 @@ public class AddressBook
 				System.out.println(list);
 		}
 	}
+	
+	public void countBasedOnCity()
+	{
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter city name : ");
+		String city = sc.nextLine();
+		sc.close();
+		for (Person list : l)
+		{
+			if (list.getCity().equals(city)) {
+				count++;
+				System.out.println(list);
+
+			}
+		}
+		System.out.println("TotalNo : " + count);
+	}
 
 	public static void main(String[] args)
 	{
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program");
 		addPerson();
-		a.viewByCity();
+		a.countBasedOnCity();
 	}
 
 }
