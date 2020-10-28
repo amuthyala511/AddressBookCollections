@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class AddressBook
 {
 	static Scanner sc = new Scanner(System.in);
-	static List<Person> list = new LinkedList<Person>();
+	static List<Person> l = new LinkedList<Person>();
 
 	public static void addContact()
 	{
 		System.out.println("Enter your firstName : ");
 			String firstName = sc.nextLine();
-		for (int i = 0; i < list.size(); i++)
+		for (int i = 0; i < l.size(); i++)
 		{
-			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			if (l.get(i).getFirstName().equalsIgnoreCase(firstName))
 			{
 				System.out.println("Name already exists. Try another name");
 				addPerson();
@@ -35,18 +35,18 @@ public class AddressBook
 		System.out.println("Enter your emailId : ");
 			String email = sc.nextLine();
 		Person obj = new Person(firstName, lastName, address, city, state, zip, phoneNo, email);
-		list.add(obj);
+		l.add(obj);
 	}
 	
 	public static void editContact()
 	{
 		System.out.println("Enter first name: ");
 		String firstName = sc.nextLine();
-		for (int i = 0; i < list.size(); i++)
+		for (int i = 0; i < l.size(); i++)
 		{
-			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			if (l.get(i).getFirstName().equalsIgnoreCase(firstName))
 			{
-				list.remove(i);
+				l.remove(i);
 				addContact();
 			} 
 			else {
@@ -59,11 +59,11 @@ public class AddressBook
 	{
 		System.out.println("Enter first name : ");
 		String firstName = sc.nextLine();
-		for (int i = 0; i < list.size(); i++)
+		for (int i = 0; i < l.size(); i++)
 		{
-			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			if (l.get(i).getFirstName().equalsIgnoreCase(firstName))
 			{
-				list.remove(i);
+				l.remove(i);
 			}
 			else {
 				System.out.println("No data found");
@@ -82,13 +82,24 @@ public class AddressBook
 			count++;
 		}
 	}
+	
+	public void searchByCity()
+	{
+		System.out.println("Enter city name");
+		String city = sc.nextLine();
+		for (Person list : l)
+		{
+			if (((Person) l).getCity().equals(city))
+				System.out.println(l);
+		}
+	}
 
 	public static void main(String[] args)
 	{
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program");
 		addPerson();
-		System.out.println(list);
+		System.out.println(l);
 	}
 
 }
