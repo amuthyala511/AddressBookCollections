@@ -29,9 +29,16 @@ public class AddressBook
 		list.add(obj);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
+		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program..");
-		addContact();
+		System.out.println("Enter the details of new contact");
+		int count = 1;
+		while(count == 1) {
+			addContact();
+			count--;
+		}
 		System.out.println(list);
 	}
 
