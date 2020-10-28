@@ -67,7 +67,7 @@ public class AddressBook
 		AddressBook a = new AddressBook();
 		System.out.println("Welcome to Address Book Program");
 		addContact();
-		editContact();
+		deleteContact();
 		System.out.println(list);
 	}
 
