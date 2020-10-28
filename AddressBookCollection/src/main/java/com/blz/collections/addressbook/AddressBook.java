@@ -28,17 +28,30 @@ public class AddressBook
 			Person obj = new Person(firstName, lastName, address, city, state, zip, phoneNo, email);
 		list.add(obj);
 	}
+	
+	public static void editContact()
+	{
+		//Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first name: ");
+		String firstName = sc.nextLine();
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+			{
+				list.remove(i);
+				addContact();
+			} 
+			else {
+				System.out.println("No data found in Address Book");
+			}
+		}
+	}
 
 	public static void main(String[] args)
 	{
 		AddressBook a = new AddressBook();
-		System.out.println("Welcome to Address Book Program..");
-		System.out.println("Enter the details of new contact");
-		int count = 1;
-		while(count == 1) {
-			addContact();
-			count--;
-		}
+		System.out.println("Welcome to Address Book Program");
+		addContact();
+		editContact();
 		System.out.println(list);
 	}
 
